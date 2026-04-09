@@ -49,7 +49,6 @@ export default function Turnstile({ active = false, onReady }: TurnstileProps) {
       }
     };
     document.head.appendChild(script);
-    // Cleanup script and widget on unmount
     return () => {
       script.remove();
       if (containerRef.current) containerRef.current.innerHTML = '';
