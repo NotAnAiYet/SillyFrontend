@@ -1,0 +1,31 @@
+---
+interface Props {
+  name?: string;
+  intro?: string;
+  description?: string;
+  learningItems?: string[];
+}
+
+const {
+  name = 'Yannick',
+  intro = 'a collector of weird ideas, decent playlists, and lover of horses 🐎',
+  description = 'This page celebrates the golden era when every homepage had a tiled background, a "last updated" stamp nobody believed, and optimism that lasted exactly one modem handshake. I build weird things on the web, study for my bachelor, go riding, and believe in silly ideas making the world a bit brighter.',
+  learningItems = [
+    'Currently learning: how to ride without looking like an idiot',
+    'Recently finished: a perfect pizza (peer-reviewed)',
+    'Spirit animal: the loading spinner that never ends',
+  ],
+} = Astro.props;
+---
+<section class="retro-panel mb-4">
+  <h2 class="panel-title"><span class="blink">NEW!</span> About Me</h2>
+  <p class="lead retro-lead">
+    Howdy! I'm <strong>{name}</strong> — {intro}
+  </p>
+  <p>{description}</p>
+  <ul class="retro-list">
+    {learningItems.map((item) => (
+      <li><span class="bullet">◆</span> {item}</li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,27 @@
+---
+// Footer component with hydrated Easter Egg
+import EasterEgg from './EasterEgg.tsx';
+import secretMessages from '../data/secretMessages.json';
+
+interface Props {
+  siteName?: string;
+  email?: string;
+}
+
+const {
+  siteName = 'Silly Boats',
+  email = 'contact@silly.boats',
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+<footer class="text-center mt-5 retro-footer">
+  <p class="mb-1">
+    © {currentYear} {siteName} · No tracking cookies · Only vibes
+  </p>
+  <p class="mb-0 small footer-links">
+    <a href={`mailto:${email}`}>E-mail</a>
+    <span class="divider">|</span>
+    <EasterEgg client:load messages={secretMessages.messages} />
+  </p>
+</footer>

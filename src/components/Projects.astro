@@ -1,0 +1,47 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  link?: string;
+  image?: string;
+}
+
+interface Props {
+  title?: string;
+  projects?: Project[];
+  showUnderConstruction?: boolean;
+}
+
+const {
+  title = 'Projects (the good stuff)',
+  projects = [],
+  showUnderConstruction = true,
+} = Astro.props;
+
+// Import under construction image
+import underConstruction from '../assets/media/under-construction-sign.gif';
+---
+<section class="retro-panel">
+  <h2 class="panel-title">{title}</h2>
+  <div class="row g-3">
+    {showUnderConstruction && projects.length === 0 ? (
+      <div class="text-center">
+        <img src={underConstruction.src} alt="Under Construction" />
+        <p class="small mt-2">Real projects coming soon™</p>
+      </div>
+    ) : (
+      projects.map((project) => (
+        <div class="col-md-6">
+          <div class="project-tile p-3">
+            {project.image && <img src={project.image} alt={project.title} class="mb-2" />}
+            <h3 class="h5">{project.title}</h3>
+            <p class="small mb-1">{project.description}</p>
+            {project.link && (
+              <a href={project.link} class="small">View project →</a>
+            )}
+          </div>
+        </div>
+      ))
+    )}
+  </div>
+</section>
