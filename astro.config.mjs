@@ -8,8 +8,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://notanai.github.io/SillyFrontend/', // Update to your repo's GitHub Pages URL
-    base: '/SillyFrontend/', // Ensures correct asset paths for GitHub Pages subpath
+    site: 'https://silly.boats', // Update to your repo's GitHub Pages URL
     output: 'static',
     integrations: [mdx(), sitemap(), react()],
 });
