@@ -1,6 +1,5 @@
 ---
 import EasterEgg from './EasterEgg.tsx';
-import secretMessages from '../data/secretMessages.json';
 
 interface Props {
   siteName?: string;
@@ -21,6 +20,6 @@ const currentYear = new Date().getFullYear();
   <p class="mb-0 small footer-links">
     <a href={`mailto:${email}`}>E-mail</a>
     <span class="divider">|</span>
-    <EasterEgg client:load messages={secretMessages.messages} />
+    <EasterEgg client:load />
   </p>
 </footer>

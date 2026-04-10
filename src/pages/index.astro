@@ -7,11 +7,10 @@ import AboutMe from '../components/AboutMe.astro';
 import Projects from '../components/Projects.astro';
 import Socials from '../components/Socials.astro';
 import Footer from '../components/Footer.astro';
-import fakeSitesData from '../data/fakeSites.json';
+import Webring from '../components/Webring.tsx';
+import SplashText from '../components/SplashText.astro';
 
 import favicon from '../assets/media/favicon.ico';
-import Webring from '../components/Webring';
-import SplashText from '../components/SplashText.astro';
 ---
 <html lang="en">
 	<head>
@@ -49,7 +48,7 @@ import SplashText from '../components/SplashText.astro';
 			<aside class="col-lg-4">
 				<Guestbook client:load />
 				<Socials />
-				<Webring client:load sites={fakeSitesData.sites} />
+				<Webring client:load />
 				<Confetti client:load />
 			</aside>
 		</div>
