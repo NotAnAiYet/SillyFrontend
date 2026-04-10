@@ -83,11 +83,18 @@ a {
     3px 3px 0 #ff006e,
     6px 6px 0 #3a0ca3,
     0 0 20px rgba(0, 255, 200, 0.5);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5ch;
 }
 
 .title-graphic {
   color: #ffea00;
   animation: twinkle 1.8s ease-in-out infinite;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .title-graphic:last-child {
@@ -409,10 +416,15 @@ a {
 .retro-footer {
   color: #fff;
   text-shadow: 1px 1px 3px #000;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .retro-footer a, .retro-footer button {
   color: #ffea00;
+  white-space: nowrap;
 }
 
 .retro-footer a:visited, .retro-footer button:visited {
@@ -422,6 +434,40 @@ a {
 .footer-links .divider {
   opacity: 0.7;
   margin: 0 0.35rem;
+  white-space: nowrap;
+}
+
+.project-tile img,
+.retro-panel img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 1rem;
+    white-space: nowrap;
+    gap: 0.2ch;
+  }
+  .retro-footer {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .project-tile img,
+  .retro-panel img {
+    max-width: 80vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 410px) {
+  .site-title {
+    font-size: 0.85rem;
+    gap: 0.1ch;
+  }
 }
 
 /* Confetti overlay */

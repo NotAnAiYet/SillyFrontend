@@ -28,3 +28,4 @@
 - Prefer composition over inheritance.
 - Remove unused code and imports.
 - Ensure all code fits the general style and structure of the project.
+- Make sure all CSS looks good on mobile and desktop
