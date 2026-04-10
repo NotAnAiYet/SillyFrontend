@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from 'react';
+import { LAST_UPDATED } from '../consts';
 
 interface ConfettiProps {
   buttonText?: string;
@@ -14,7 +15,7 @@ export default function Confetti({
   const [pieces, setPieces] = useState<Array<{ id: number; style: React.CSSProperties }>>([]);
   const nextId = useRef(0);
 
-  const lastUpdated = new Date().toLocaleDateString('en-US', {
+  const lastUpdated = new Date(LAST_UPDATED).toLocaleString('en-US', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
