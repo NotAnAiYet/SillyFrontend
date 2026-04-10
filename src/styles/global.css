@@ -40,13 +40,13 @@ a {
 /* Full-viewport background image + 90s "outer space / lava" vibe */
 .retro-bg {
   position: fixed;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: -2;
   background-color: #2b1055;
   background-image: url("/media/background.jpg"); /* https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1920&q=80" */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
 }
 
 .retro-bg::after {
