@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import LinkButton from './LinkButton';
+import messages from '../data/secretMessages.json';
 
-interface EasterEggProps {
-  messages: string[];
-}
 
-export default function EasterEgg({ messages }: EasterEggProps) {
+export default function EasterEgg() {
   const [message, setMessage] = useState<string | null>(null);
   const [remainingMessages, setRemainingMessages] = useState<string[]>([...messages]);
   const [secretHunterUnlocked, setSecretHunterUnlocked] = useState(false);

@@ -1,15 +1,14 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
+import sites from '../data/fakeSites.json';
 
 interface WebringProps {
   title?: string;
   description?: string;
-  sites: string[];
 }
 
 export default function Webring({
   title = 'Web neighborhood',
-  description = 'Pretend webring (click for nostalgia):',
-  sites,
+  description = 'Pretend webring (click for nostalgia):'
 }: WebringProps) {
   const [status, setStatus] = useState('');
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
