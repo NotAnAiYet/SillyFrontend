@@ -16,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -25,6 +27,7 @@ body {
   color: var(--text-dark);
   background-color: #0d0221;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 b, strong {
