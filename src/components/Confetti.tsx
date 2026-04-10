@@ -10,7 +10,7 @@ interface ConfettiProps {
 }
 
 export default function Confetti({
-  buttonText = 'click for celebratory pixels',
+  buttonText = 'click for celebratory Confetti',
   colors = ['#ff006e', '#8338ec', '#3a86ff', '#ffbe0b', '#fb5607', '#06ffa5', '#ff69eb'],
   count = 200,
 }: ConfettiProps) {
