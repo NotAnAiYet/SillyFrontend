@@ -587,3 +587,34 @@ a.linkComponent, .linkComponent {
     min-width: unset;
   }
 }
+
+.splash-text {
+  display: inline-block;
+  color: #ffec3d;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 0 #3e3e3e, 0 0 10px #fff200;
+  transform: rotate(-15deg);
+  animation: splash-pulse 1.6s infinite cubic-bezier(0.4,0,0.2,1);
+  user-select: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+    .splash-text {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 600px) {
+    .splash-text {
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes splash-pulse {
+  0% { transform: rotate(-15deg) scale(0.96); }
+  25% { transform: rotate(-15deg) scale(1.04); }
+  50% { transform: rotate(-15deg) scale(0.96); }
+  75% { transform: rotate(-15deg) scale(1.04); }
+  100% { transform: rotate(-15deg) scale(0.96); }
+}

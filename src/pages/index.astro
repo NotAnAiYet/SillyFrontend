@@ -8,7 +8,7 @@ import Projects from '../components/Projects.astro';
 import Socials from '../components/Socials.astro';
 import Footer from '../components/Footer.astro';
 import Webring from '../components/Webring.tsx';
-import SplashText from '../components/SplashText.astro';
+import SplashText from '../components/SplashText.tsx';
 
 import favicon from '../assets/media/favicon.ico';
 ---
@@ -34,7 +34,7 @@ import favicon from '../assets/media/favicon.ico';
 					Yannick's Silly Stables
 					<span class="title-graphic" aria-hidden="true">✦</span>
 				</h1>
-				<span class="splash-overlay"><SplashText /></span>
+				<span class="splash-overlay"><SplashText client:load /></span>
 			</div>
 			<p class="tagline mb-0">Code Wizard · Horse enthusiast · Friend to all browsers</p>
 		</header>
