@@ -466,9 +466,9 @@ a {
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 420px) {
   .site-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     gap: 0.1ch;
   }
 }
@@ -611,6 +611,12 @@ a.linkComponent, .linkComponent {
 @media (max-width: 600px) {
     .splash-text {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .splash-text {
+        font-size: 0.8rem;
     }
 }
 
