@@ -11,6 +11,7 @@ import fakeSitesData from '../data/fakeSites.json';
 
 import favicon from '../assets/media/favicon.ico';
 import Webring from '../components/Webring';
+import SplashText from '../components/SplashText.astro';
 ---
 <html lang="en">
 	<head>
@@ -28,11 +29,14 @@ import Webring from '../components/Webring';
 	<div class="container py-4 position-relative site-wrap">
 		<header class="text-center mb-4 retro-header">
 			<p class="subtitle mb-1">~ Horsing around since 2001 ~</p>
-			<h1 class="site-title mb-2">
-				<span class="title-graphic" aria-hidden="true">✦</span>
-				Yannick's Silly Stables
-				<span class="title-graphic" aria-hidden="true">✦</span>
-			</h1>
+			<div class="site-title-wrapper mb-2 position-relative d-inline-block">
+				<h1 class="site-title m-0">
+					<span class="title-graphic" aria-hidden="true">✦</span>
+					Yannick's Silly Stables
+					<span class="title-graphic" aria-hidden="true">✦</span>
+				</h1>
+				<span class="splash-overlay"><SplashText /></span>
+			</div>
 			<p class="tagline mb-0">Code Wizard · Horse enthusiast · Friend to all browsers</p>
 		</header>
 		<p id="site-hint" class="site-hint small text-center mb-2 d-none" role="status"></p>

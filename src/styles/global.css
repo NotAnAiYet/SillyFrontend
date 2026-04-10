@@ -548,3 +548,42 @@ a.linkComponent, .linkComponent {
     drop-shadow(2px 2px 0 #000)
     drop-shadow(0 0 5px rgba(255, 0, 200, 0.8));
 }
+
+/* Splash overlay for Minecraft-style splash text */
+.site-title-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.splash-overlay {
+  position: absolute;
+  left: 100%;
+  top: 1em;
+  transform: translateX(-10%) scale(1);
+  pointer-events: none;
+  z-index: 2;
+  min-width: 7.5rem;
+}
+@media (max-width: 800px) {
+  .splash-overlay {
+    left: 95%;
+    top: 2em;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-title-wrapper {
+    display: block;
+  }
+  .splash-overlay {
+    left: 80%;
+    top: 3em;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    min-width: unset;
+  }
+}
