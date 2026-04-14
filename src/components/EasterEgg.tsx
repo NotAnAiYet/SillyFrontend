@@ -25,6 +25,7 @@ export default function EasterEgg() {
     if (remainingMessages.length === 0) {
       setMessage('🏆 Achievement unlocked: Secret Hunter! You found all ' + messages.length + ' secrets!');
       setSecretHunterUnlocked(true);
+      setClicksAfterHunter(1);
     } else {
       const randomIndex = Math.floor(Math.random() * remainingMessages.length);
       const randomMessage = remainingMessages[randomIndex];
