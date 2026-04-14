@@ -1,0 +1,14 @@
+<span class="splash-text" aria-hidden="true"></span>
+
+
+<script>
+	fetch('/data/splashes.json')
+		.then(r => r.json())
+		.then(splashes => {
+			const el = document.querySelector('.splash-text');
+			if (el && Array.isArray(splashes) && splashes.length) {
+				const idx = Math.floor(Math.random() * splashes.length);
+				el.textContent = splashes[idx];
+			}
+		});
+</script>

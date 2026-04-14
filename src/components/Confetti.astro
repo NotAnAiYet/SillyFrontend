@@ -1,0 +1,56 @@
+---
+import { undefined } from 'astro:schema';
+import { LAST_UPDATED } from '../consts.ts';
+
+interface Props {
+  buttonText?: string;
+  colors?: string[];
+  count?: number;
+  lastUpdated?: string;
+}
+
+const {
+  buttonText = 'click for celebratory Confetti',
+  colors = ['#ff006e', '#8338ec', '#3a86ff', '#ffbe0b', '#fb5607', '#06ffa5', '#ff69eb'],
+  count = 200,
+  lastUpdated = LAST_UPDATED,
+} = Astro.props;
+
+const formattedLastUpdated = new Date(lastUpdated).toLocaleString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+<div class="retro-panel mt-4 last-updated">
+  <p class="mb-0 small text-center">
+    Last updated: <time>{formattedLastUpdated}</time>
+    <br />
+    <button type="button" id="confetti-btn" class="btn-link-retro mt-2">
+      {buttonText}
+    </button>
+  </p>
+</div>
+
+<script define:vars={{ count, colors }} type="module">
+  const btn = document.getElementById('confetti-btn');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      const mod = await import('https://cdn.jsdelivr.net/npm/@tsparticles/confetti/+esm');
+      const confetti = mod.confetti || mod.default || mod;
+      if (typeof confetti === 'function') {
+        await confetti('tsparticles', {
+          count,
+          colors,
+          position: { x: 50, y: -5 },
+          spread: 180,
+          startVelocity: 90,
+          ticks: 50,
+          gravity: 1.5,
+          shapes: ['square', 'circle'],
+          scalar: 2,
+        });
+      } 
+    });
+  }
+</script>
