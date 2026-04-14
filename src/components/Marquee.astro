@@ -18,10 +18,14 @@ function padHits(n: number): string {
 
 const initialDisplay = padHits(defaultHits);
 ---
+
 <div class="marquee-wrap mb-4" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-text">{welcomeText} ★ You are one of <span data-hit-counter>{initialDisplay}</span> guests! ★ Thanks for stopping by! ★</span>
-    <span class="marquee-text" aria-hidden="true">{welcomeText} ★ You are one of <span data-hit-counter-clone>{initialDisplay}</span> guests! ★ Thanks for stopping by! ★</span>
+    {Array.from({ length: 3 }).map((_, i) => (
+      <span class="marquee-text" aria-hidden={i === 0 ? undefined : 'true'}>
+        {welcomeText} ★ You are one of <span data-hit-counter={i === 0 ? true : undefined} data-hit-counter-clone={i > 0 ? true : undefined}>{initialDisplay}</span> guests! ★ Thanks for stopping by! ★
+      </span>
+    ))}
   </div>
 </div>
 
